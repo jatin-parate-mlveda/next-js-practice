@@ -5,7 +5,9 @@ export default async function DashboardPage() {
     "use server";
     console.log("formData", Object.fromEntries(formData.entries()));
   };
-  const todos = await fetch("https://jsonplaceholder.typicode.com/todos").then(
+  const todos = await fetch("https://jsonplaceholder.typicode.com/todos", {
+    cache: 'force-cache',
+  }).then(
     (res) => res.json()
   );
 
